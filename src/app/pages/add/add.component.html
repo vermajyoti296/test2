@@ -1,0 +1,49 @@
+<p>add works!</p>
+<!-- <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>First name</mat-label>
+      <input matInput placeholder="name" type="text">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Long Last </mat-label>
+      <input matInput>
+    </mat-form-field></td>
+  </tr></table>
+   -->
+   <div class="tables">
+    <form [formGroup]="addform">
+     <mat-form-field appearance="fill">
+        <!-- <mat-label>Enter Employee id</mat-label> -->
+        <input matInput type="text" formControlName="id" placeholder="Enter Id">
+     </mat-form-field><br>
+     <mat-error *ngIf="
+     submitted && addform.controls['id'].hasError('required')
+   ">Id is required</mat-error>
+
+      <mat-form-field appearance="fill">
+      <!-- <mat-label>Enter Employee Name</mat-label> -->
+      <input matInput type="text" formControlName="employee_name" placeholder="Enter Employee Name"> 
+      </mat-form-field><br>
+      <mat-error *ngIf="
+      submitted && addform.controls['employee_name'].hasError('required')
+    ">Employee Name is required</mat-error>
+      <mat-form-field appearance="fill">
+        <!-- <mat-label>Enter Employee Salary</mat-label> -->
+        <input matInput type="number" formControlName="employee_salary" placeholder="Enter Employee Salary"> 
+       </mat-form-field><br>
+       <mat-error *ngIf="
+      submitted && addform.controls['employee_salary'].hasError('required')
+    ">Employee Salary is required</mat-error>
+
+       <mat-form-field appearance="fill">
+        <!-- <mat-label>Enter Employee Age</mat-label> -->
+        <input matInput type="number"  formControlName="employee_age" placeholder="Enter Employee Age"> 
+      </mat-form-field>
+      <mat-error *ngIf="
+      submitted && addform.controls['employee_age'].hasError('required')
+    ">Employee Ageis required</mat-error>
+
+    </form>
+    </div>
+    <button mat-button color="primary" (click)="addSubmit()">Submit</button>
+
