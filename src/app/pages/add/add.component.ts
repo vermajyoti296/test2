@@ -48,7 +48,7 @@ export class AddComponent implements OnInit {
         this.data=res.data
         this.addform.patchValue(this.data);
   }
-})
+  })
   }
 
 }
